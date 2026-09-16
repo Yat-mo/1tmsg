@@ -499,7 +499,10 @@ main { position: relative; z-index: 1 }
   .card-bd.lg { padding: 22px 18px }
   #md { min-height: 186px }
   .mdv { min-height: 186px }
-  .m-only { display: inline-flex }
+  /* 移动端把 .m-only 从 display:none 转为可见。必须用 inline-grid 而非 inline-flex：
+     flex 会忽略 place-items 的 justify-items 分量，.step 里的序号会被甩到左侧；
+     用 inline-* 才能与同一 <h2> 里的标题文字同行。 */
+  .m-only { display: inline-grid }
   .act { margin-top: 14px }
   .btn.lg { padding: 15px 22px }
   .frame.narrow { padding: 26px 18px 80px }
